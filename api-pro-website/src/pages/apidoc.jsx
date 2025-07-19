@@ -11,6 +11,7 @@ export default function ApiDocumentationOptimized() {
   const [typedText, setTypedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const [currentPhase, setCurrentPhase] = useState(0);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const textPhases = ["API PRO", "API PRO\nDeveloper", "API PRO\nDeveloper Documentation"];
 
@@ -140,8 +141,48 @@ export default function ApiDocumentationOptimized() {
         </div>
 
         <div className="max-w-7xl mx-auto flex relative z-10">
-          <div className="w-80 min-h-screen bg-gray-900/30 backdrop-blur-xl border-r border-gray-800 p-6 pt-24">
-            {/* Added pt-24 for space below Navbar */}
+
+          {/* Hamburger Button - mobile only */}
+          <div className="md:hidden p-4">
+            <button
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              aria-label="Toggle Sidebar"
+              className="text-white focus:outline-none"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                {sidebarOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M3 12h18M3 6h18M3 18h18" />
+                )}
+              </svg>
+            </button>
+          </div>
+
+          {/* Overlay for mobile when sidebar open */}
+          {sidebarOpen && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 z-10 md:hidden"
+              onClick={() => setSidebarOpen(false)}
+            />
+          )}
+
+          {/* Sidebar */}
+          <div
+            className={`
+              fixed inset-y-0 left-0 z-20 w-64 bg-gray-900/30 backdrop-blur-xl border-r border-gray-800 p-6 pt-24
+              transform transition-transform duration-300 ease-in-out
+              md:relative md:translate-x-0
+              ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+            `}
+          >
             <nav className="space-y-6">
               {navigationItems.map((section, sectionIndex) => (
                 <div
@@ -168,7 +209,10 @@ export default function ApiDocumentationOptimized() {
                         } ${animateContent ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"}`}
                       >
                         <button
-                          onClick={() => setActiveLink(link.name)}
+                          onClick={() => {
+                            setActiveLink(link.name);
+                            setSidebarOpen(false); // close sidebar on mobile after selection
+                          }}
                           className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center justify-start group ${
                             activeLink === link.name
                               ? "bg-gradient-to-r from-blue-600/40 to-purple-600/40 text-white border border-blue-500/50 shadow-lg shadow-blue-500/20"
@@ -185,11 +229,13 @@ export default function ApiDocumentationOptimized() {
             </nav>
           </div>
 
+          {/* Main content */}
           <div
-            className={`flex-1 p-8 max-w-4xl mx-auto
-            transition-all duration-600 ease-out
-            ${animateContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
-          `}
+            className={`
+              flex-1 p-8 max-w-4xl mx-auto transition-all duration-600 ease-out
+              md:ml-64
+              ${animateContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
+            `}
           >
             <div className="text-center mb-8">
               <div className="min-h-[120px] flex items-center justify-center">{renderTypedHeading()}</div>
