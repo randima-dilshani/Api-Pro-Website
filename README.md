@@ -43,30 +43,32 @@ npm run dev
 
 # 🤖 AI Tools Used
 
-This project leveraged AI-powered development tools to accelerate building the website:
+* This project leveraged AI-powered development tools to accelerate building the website:
 
-GitHub Copilot: Assisted with writing React components, state management, and API integration, speeding up coding and reducing boilerplate.
+* GitHub Copilot: Helped in writing React components, managing state, and reducing repetitive boilerplate code — especially in pages like contactud.jsx and apidocs.jsx.
 
-v0.dev: Generated initial UI components from text prompts, especially for the Hero section and Pricing cards, which saved about 2 hours.
+* v0.dev: Used to generate the Hero section, the Pricing table UI and Team members card view. This saved me about 3 hours of manual design and implementation.
 
-Tailwind CSS IntelliSense: For rapid styling and autocomplete in CSS classes.
+* Tailwind CSS IntelliSense: For rapid styling and autocomplete in CSS classes.
 
-Using these AI tools helped focus on UX and responsiveness while quickly scaffolding components.
+* Using these AI tools helped focus on UX and responsiveness while quickly scaffolding components. 
 
 
 # 📝 Notes & Decisions
 
-The website is built with React (using functional components and hooks).
+* The website is built with React (using functional components and hooks).
 
-Tailwind CSS is used for styling and responsive design.
+* Tailwind CSS is used for styling and responsive design.
 
-The About Us page fetches real data from the JSONPlaceholder API to display team member profiles dynamically.
+* Navbar is fully responsive with desktop and mobile support, including a hamburger menu and animated transitions.
 
-The sidebar navigation in the API Documentation page is responsive with mobile toggling.
+* The About Us page fetches real data from the JSONPlaceholder API to display team member profiles dynamically.
 
-All pages are fully responsive for desktop, tablet, and mobile views.
+* The sidebar navigation in the API Documentation page is responsive with mobile toggling.
 
-Form validation and submission in the Contact page are minimal (no backend integration yet).
+* All pages are fully responsive for desktop, tablet, and mobile views.
 
-Git is used for version control with meaningful commit messages.
+* Form validation and submission in the Contact page are minimal (no backend integration yet).
+
+* Git is used for version control with meaningful commit messages.
 
