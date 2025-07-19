@@ -41,7 +41,7 @@ npm run dev
 /public - Static assets like images and favicon
 
 
-#🤖 AI Tools Used
+# 🤖 AI Tools Used
 
 This project leveraged AI-powered development tools to accelerate building the website:
 
@@ -54,7 +54,7 @@ Tailwind CSS IntelliSense: For rapid styling and autocomplete in CSS classes.
 Using these AI tools helped focus on UX and responsiveness while quickly scaffolding components.
 
 
-#📝 Notes & Decisions
+# 📝 Notes & Decisions
 
 The website is built with React (using functional components and hooks).
 
