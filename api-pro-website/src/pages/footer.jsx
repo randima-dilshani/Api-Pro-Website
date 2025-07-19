@@ -1,17 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import { Button } from "../ui/button"
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Github,
-  Twitter,
-  Linkedin,
-  Youtube,
-  Send,
-  CheckCircle,
-  ExternalLink,
-} from "lucide-react"
+import { Mail,Phone,MapPin,Github,Twitter,Linkedin,Youtube,Send,CheckCircle,ExternalLink,} from "lucide-react"
 
 export default function FooterModern() {
   const [isVisible, setIsVisible] = useState(false)
@@ -78,13 +67,11 @@ export default function FooterModern() {
       ref={footerRef}
       className="relative bg-gray-950 border-t border-gray-800 overflow-hidden select-none"
     >
-      {/* Animated Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Primary gradient blobs */}
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-tr from-blue-500/10 via-purple-500/5 to-pink-500/10 rounded-full blur-3xl animate-blob-slow-1" />
         <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-gradient-to-bl from-cyan-500/8 via-purple-500/8 to-blue-500/8 rounded-full blur-3xl animate-blob-slow-2" />
 
-        {/* Floating particles */}
+        
         <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-blue-400/30 rounded-full animate-float-slow-1" />
         <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-purple-400/30 rounded-full animate-float-slow-2" />
         <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-pink-400/30 rounded-full animate-float-slow-3" />
@@ -94,7 +81,7 @@ export default function FooterModern() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Main Footer Content - 4 Sections */}
+      
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* 1. Navigation Section */}
           <div

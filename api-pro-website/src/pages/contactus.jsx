@@ -400,13 +400,11 @@ const sectionRef = useRef(null);
                 className={`group relative p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/20 hover:bg-white/10 hover:border-white/30 transition-all duration-500 hover:scale-105 cursor-pointer opacity-0 animate-slide-in-right`}
                 style={{ animationDelay: detail.delay, animationFillMode: "forwards" }}
               >
-                {/* Glow effect */}
                 <div
                   className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${detail.gradient} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-500`}
                 />
 
                 <div className="flex items-start space-x-4 relative z-10">
-                  {/* Animated Icon */}
                   <div
                     className={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-r ${detail.gradient} flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}
                   >
@@ -424,12 +422,10 @@ const sectionRef = useRef(null);
                   </div>
                 </div>
 
-                {/* Hover indicator */}
                 <div
                   className={`absolute bottom-3 right-3 w-2 h-2 rounded-full bg-gradient-to-r ${detail.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse`}
                 />
 
-                {/* Shimmer effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
               </div>
             ))}

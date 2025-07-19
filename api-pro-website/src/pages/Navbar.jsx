@@ -27,18 +27,14 @@ export default function Navbar() {
         scrolled ? "py-3" : "py-6"
       }`}
     >
-      {/* New fixed div with backdrop blur and styling */}
       <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/10 border-b border-white/10 shadow-lg">
-        <div className="flex justify-between items-center px-4 sm:px-6 md:px-12 h-[100px] max-w-[120rem] mx-auto">
-          {/* Logo - stays on the left */}
+        <div className="flex justify-between items-center px-4 sm:px-6 md:px-12 h-[90px] max-w-[120rem] mx-auto">
           <div className="relative group flex items-center space-x-3 cursor-pointer">
-            {/* Logo Image */}
             <img
               src="/logo.jpg"
               alt="API PRO Logo"
               className="w-10 h-10 object-contain"
             />
-            {/* Logo Text */}
             <h1 className="text-2xl font-black text-white tracking-wide transition-all duration-300 group-hover:scale-105">
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 API PRO
