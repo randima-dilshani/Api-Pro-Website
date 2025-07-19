@@ -18,6 +18,7 @@ Follow these steps to run the project locally on your machine:
 1. Clone the repository:
 
  https://github.com/randima-dilshani/Api-Pro-Website.git
+ 
  cd api-pro-website
 
 2. Install dependencies:
