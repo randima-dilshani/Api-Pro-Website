@@ -3,7 +3,9 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Features() {
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("down");
   const sectionRef = useRef(null);
+  const prevScrollY = useRef(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,6 +22,17 @@ export default function Features() {
     }
 
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setScrollDirection(currentY > prevScrollY.current ? "down" : "up");
+      prevScrollY.current = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const features = [
@@ -72,7 +85,14 @@ export default function Features() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-100 mb-6">
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-100 mb-6"
+            style={{
+              letterSpacing: scrollDirection === "up" ? "-0.01em" : "0.04em",
+              transform: scrollDirection === "up" ? "scale(0.98)" : "scale(1.02)",
+              transition: "all 0.4s ease",
+            }}
+          >
             Everything You Need in{" "}
             <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               One Platform

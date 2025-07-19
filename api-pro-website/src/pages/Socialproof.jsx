@@ -61,13 +61,16 @@ export default function SocialProof() {
           {companies.map((company, index) => (
             <motion.div
               key={index}
-              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-black/40 backdrop-blur-xl border border-gray-700/50 transition-all duration-300 hover:scale-105 hover:border-blue-500 hover:bg-gradient-to-br hover:from-blue-700/30 hover:to-purple-700/30"
+              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-gray-900/60 border border-gray-700 backdrop-blur-xl shadow-lg shadow-blue-500/10 transition-all duration-300 relative overflow-hidden"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
-              whileHover={{ scale: 1.06 }}
+              whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
             >
+              {/* subtle light blur on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none rounded-2xl blur-lg" />
+
               <img
                 src={company.logo}
                 alt={company.name}
@@ -81,32 +84,6 @@ export default function SocialProof() {
             </motion.div>
           ))}
         </div>
-
-        {/* Stats */}
-        <motion.div
-          className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-        >
-          {[
-            { value: "1M+", label: "API Calls Daily" },
-            { value: "50K+", label: "Developers" },
-            { value: "99.9%", label: "Uptime" },
-            { value: "24/7", label: "Support" }
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              className="text-center p-6 rounded-2xl bg-gradient-to-br from-black/60 to-gray-900/60 backdrop-blur-xl border border-gray-700/50"
-              initial={{ opacity: 0, y: 10 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
-            >
-              <div className="text-2xl font-black text-gray-100 mb-1">{stat.value}</div>
-              <div className="text-gray-400 text-xs">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

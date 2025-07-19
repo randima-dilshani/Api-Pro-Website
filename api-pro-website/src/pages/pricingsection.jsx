@@ -1,5 +1,6 @@
 import { Button } from "../ui/button"
 import Navbar from "../pages/Navbar"
+import Footer from "../pages/footer";
 import { Check, Star } from "lucide-react"
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
@@ -187,6 +188,7 @@ export default function PricingSection() {
           </motion.div>
         </div>
       </section>
+      <Footer />
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { Button } from "../ui/button";
 import Navbar from "../pages/Navbar";
+import Footer from "../pages/footer";
 import Features from "../pages/Features";
 import SocialProof from "../pages/Socialproof";
 import { ArrowRight, Code, Zap, Shield, ExternalLink } from "lucide-react";
@@ -99,16 +100,17 @@ export default function Hero() {
 
           {/* CTA Button */}
           <div className="mb-16">
-            <Button
-              size="lg"
-              className="group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-12 py-6 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 border-0"
-            >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-600 to-purple-600 blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
-              <span className="relative flex items-center">
-                Get Started for Free
-                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </Button>
+          <Button
+  size="lg"
+  className="group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-10 py-4 text-lg font-semibold rounded-xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 border-0"
+>
+  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
+  <span className="relative flex items-center">
+    Get Started for Free
+    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+  </span>
+</Button>
+
           </div>
 
           {/* Stats */}
@@ -136,6 +138,7 @@ export default function Hero() {
       {/* 👇 Features Component Section 👇 */}
       <Features />
        <SocialProof />
+       <Footer />
 
       <style jsx>{`
         @keyframes fade-in-up {

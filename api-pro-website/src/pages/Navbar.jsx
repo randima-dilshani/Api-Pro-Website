@@ -7,10 +7,10 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
+    { name: "About Us", href: "/about" },
     { name: "Pricing", href: "/pricingsection" },
-    { name: "API Docs", href: "#docs", icon: Code },
-    { name: "Contact", href: "#contact", icon: ExternalLink },
+    { name: "API Docs", href: "/apidoc", icon: Code },
+    { name: "Contact Us", href: "/contactus", icon: ExternalLink },
   ];
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function Navbar() {
           <div className="relative group flex items-center space-x-3 cursor-pointer">
             {/* Logo Image */}
             <img
-              src="/logo.png"
+              src="/logo.jpg"
               alt="API PRO Logo"
               className="w-10 h-10 object-contain"
             />
@@ -47,8 +47,8 @@ export default function Navbar() {
             <div className="absolute -inset-2 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
           </div>
 
-          {/* Desktop Navigation - centered */}
-          <nav className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 space-x-10">
+          {/* Desktop Navigation - LEFT aligned */}
+          <nav className="hidden lg:flex space-x-10">
             {navItems.map((item, index) => (
               <a
                 key={index}
